@@ -11,7 +11,7 @@
 #import "ImageCell.h"
 #import "MJExtension.h"
 #import "Newes.h"
-#define XCMaxSections 3
+#define XCMaxSections 10
 #define CollectionHeight 250
 #define magin 20
 
