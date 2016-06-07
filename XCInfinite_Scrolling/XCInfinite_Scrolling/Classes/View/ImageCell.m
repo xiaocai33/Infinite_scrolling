@@ -40,6 +40,7 @@
     UILabel *nameLabel = [[UILabel alloc] init];
     nameLabel.font = [UIFont boldSystemFontOfSize:20.0];
     nameLabel.textColor = [UIColor whiteColor];
+    nameLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
     [self addSubview:nameLabel];
     self.nameLabel = nameLabel;
     
