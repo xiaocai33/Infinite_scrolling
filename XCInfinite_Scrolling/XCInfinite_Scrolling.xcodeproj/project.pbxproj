@@ -28,7 +28,7 @@
 		33746E131D05BED9002CD85E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33746E101D05BED9002CD85E /* AppDelegate.m */; };
 		33746E141D05BED9002CD85E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33746E111D05BED9002CD85E /* main.m */; };
 		33746E171D05BF0C002CD85E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33746E161D05BF0C002CD85E /* MainViewController.m */; };
-		338AD52F1D070FE300741875 /* 无限滚动.gif in Resources */ = {isa = PBXBuildFile; fileRef = 338AD52E1D070FE300741875 /* 无限滚动.gif */; };
+		338AD5311D07105600741875 /* scroll.gif in Resources */ = {isa = PBXBuildFile; fileRef = 338AD5301D07105600741875 /* scroll.gif */; };
 		33E241211D0684F700ECF7CE /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E2411E1D0684F700ECF7CE /* UITableView+SDAutoTableViewCellHeight.m */; };
 		33E241221D0684F700ECF7CE /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E241201D0684F700ECF7CE /* UIView+SDAutoLayout.m */; };
 /* End PBXBuildFile section */
@@ -94,7 +94,7 @@
 		33746E111D05BED9002CD85E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33746E151D05BF0C002CD85E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		33746E161D05BF0C002CD85E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		338AD52E1D070FE300741875 /* 无限滚动.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "无限滚动.gif"; sourceTree = "<group>"; };
+		338AD5301D07105600741875 /* scroll.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = scroll.gif; sourceTree = "<group>"; };
 		33E2411D1D0684F700ECF7CE /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
 		33E2411E1D0684F700ECF7CE /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
 		33E2411F1D0684F700ECF7CE /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 		33746DD61D05BE7B002CD85E /* XCInfinite_Scrolling */ = {
 			isa = PBXGroup;
 			children = (
-				338AD52E1D070FE300741875 /* 无限滚动.gif */,
+				338AD5301D07105600741875 /* scroll.gif */,
 				33746E0A1D05BED9002CD85E /* Classes */,
 				33746DD71D05BE7C002CD85E /* Supporting Files */,
 			);
@@ -391,8 +391,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				33746DE71D05BE7D002CD85E /* LaunchScreen.storyboard in Resources */,
+				338AD5311D07105600741875 /* scroll.gif in Resources */,
 				335D53B11D06D82C00AD18AE /* newses.plist in Resources */,
-				338AD52F1D070FE300741875 /* 无限滚动.gif in Resources */,
 				33746DE41D05BE7D002CD85E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
