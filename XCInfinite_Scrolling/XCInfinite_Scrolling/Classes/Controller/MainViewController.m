@@ -7,8 +7,9 @@
 //
 
 #import "MainViewController.h"
+#import "UIView+SDAutoLayout.h"
 
-@interface MainViewController ()
+@interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end
 
@@ -17,21 +18,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
+    
+    //添加CollectionView
+    [self addCollectionView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+/**
+ *  添加CollectionView
+ */
+- (void)addCollectionView{
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+    collectionView.backgroundColor = [UIColor blueColor];
+    collectionView.dataSource = self;
+    collectionView.delegate = self;
+    [self.view addSubview:collectionView];
+    
+    //自动布局
+    collectionView.sd_layout.leftSpaceToView(self.view, 20).rightSpaceToView(self.view, 20).topSpaceToView(self.view, 40).heightIs(120);
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UICollectionViewDataSource
+/**
+ *  多少组
+ */
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 10;
 }
-*/
+
+/**
+ *  每组多少个数据
+ */
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 10;
+}
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *ID = @"cell";
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    return cell;
+}
 
 @end

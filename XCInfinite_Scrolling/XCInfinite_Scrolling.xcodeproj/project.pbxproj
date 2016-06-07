@@ -14,6 +14,8 @@
 		33746E131D05BED9002CD85E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33746E101D05BED9002CD85E /* AppDelegate.m */; };
 		33746E141D05BED9002CD85E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33746E111D05BED9002CD85E /* main.m */; };
 		33746E171D05BF0C002CD85E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33746E161D05BF0C002CD85E /* MainViewController.m */; };
+		33E241211D0684F700ECF7CE /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E2411E1D0684F700ECF7CE /* UITableView+SDAutoTableViewCellHeight.m */; };
+		33E241221D0684F700ECF7CE /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E241201D0684F700ECF7CE /* UIView+SDAutoLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		33746E111D05BED9002CD85E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33746E151D05BF0C002CD85E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		33746E161D05BF0C002CD85E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		33E2411D1D0684F700ECF7CE /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
+		33E2411E1D0684F700ECF7CE /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
+		33E2411F1D0684F700ECF7CE /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
+		33E241201D0684F700ECF7CE /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,7 @@
 		33746E0C1D05BED9002CD85E /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				33E2411C1D0684F700ECF7CE /* SDAutoLayout */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -183,6 +190,17 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		33E2411C1D0684F700ECF7CE /* SDAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				33E2411D1D0684F700ECF7CE /* UITableView+SDAutoTableViewCellHeight.h */,
+				33E2411E1D0684F700ECF7CE /* UITableView+SDAutoTableViewCellHeight.m */,
+				33E2411F1D0684F700ECF7CE /* UIView+SDAutoLayout.h */,
+				33E241201D0684F700ECF7CE /* UIView+SDAutoLayout.m */,
+			);
+			path = SDAutoLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,7 +337,9 @@
 			files = (
 				33746E131D05BED9002CD85E /* AppDelegate.m in Sources */,
 				33746E171D05BF0C002CD85E /* MainViewController.m in Sources */,
+				33E241211D0684F700ECF7CE /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				33746E141D05BED9002CD85E /* main.m in Sources */,
+				33E241221D0684F700ECF7CE /* UIView+SDAutoLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +557,7 @@
 				33746E031D05BE7D002CD85E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33746E041D05BE7D002CD85E /* Build configuration list for PBXNativeTarget "XCInfinite_ScrollingTests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +566,7 @@
 				33746E061D05BE7D002CD85E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33746E071D05BE7D002CD85E /* Build configuration list for PBXNativeTarget "XCInfinite_ScrollingUITests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +575,7 @@
 				33746E091D05BE7D002CD85E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
