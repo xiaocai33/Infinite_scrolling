@@ -61,7 +61,7 @@ static NSString *ID = @"cell";
 }
 
 /**
- *  添加CollectionView
+ *  添加CollectionView 和 UIPageControl
  */
 - (void)addCollectionView{
     
