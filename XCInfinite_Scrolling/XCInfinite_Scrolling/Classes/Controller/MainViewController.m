@@ -11,7 +11,7 @@
 #import "ImageCell.h"
 #import "MJExtension.h"
 #import "Newes.h"
-#define XCMaxSections 10
+#define XCMaxSections 3
 #define CollectionHeight 250
 #define magin 20
 
@@ -22,7 +22,7 @@
 /** 定时器 */
 @property (nonatomic, strong) NSTimer *timer;
 /** 分页提示 */
-@property (nonatomic, weak) UIPageControl *page;
+@property (nonatomic, weak) UIPageControl *pageControl;
 
 @end
 
@@ -42,7 +42,7 @@ static NSString *ID = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     //添加CollectionView
     [self addCollectionView];
@@ -64,6 +64,8 @@ static NSString *ID = @"cell";
  *  添加CollectionView
  */
 - (void)addCollectionView{
+    
+    // 1 添加UICollectionView
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     //设置各行的间距为0
     flowLayout.minimumLineSpacing = 0;
@@ -93,7 +95,20 @@ static NSString *ID = @"cell";
     //自动布局
     collectionView.sd_layout.leftSpaceToView(self.view, magin).rightSpaceToView(self.view, magin).topSpaceToView(self.view, 40).heightIs(CollectionHeight);
     
-    //添加分页控制器
+    // 2 添加分页控制器PageControl
+    UIPageControl *pageControl = [[UIPageControl alloc] init];
+    //设置页数
+    pageControl.numberOfPages = self.newesArr.count;
+    //设置选中页数的颜色
+    pageControl.currentPageIndicatorTintColor = [UIColor redColor];
+    //设置其他未选中页数的颜色
+    pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+    
+    [self.view addSubview:pageControl];
+    self.pageControl = pageControl;
+    
+    //设置尺寸
+    pageControl.sd_layout.rightSpaceToView(self.view, 70).bottomEqualToView(collectionView).widthIs(50).heightIs(37);
     
 }
 
@@ -124,7 +139,7 @@ static NSString *ID = @"cell";
     //当前正在展示的位置
     NSIndexPath *currentIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
     
-    NSIndexPath *resetIndexPath = [NSIndexPath indexPathForItem:currentIndexPath.item inSection:currentIndexPath.section];
+    NSIndexPath *resetIndexPath = [NSIndexPath indexPathForItem:currentIndexPath.item inSection:XCMaxSections/2];
     [self.collectionView scrollToItemAtIndexPath:resetIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     
     //计算出下一个位置
@@ -134,6 +149,9 @@ static NSString *ID = @"cell";
         nextItem = 0;
         nextSection += 1;
     }
+    //设置pageControl选中的页码
+    self.pageControl.currentPage = nextItem;
+    
     NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextItem inSection:nextSection];
     
     //滚动到下一个位置
@@ -177,6 +195,14 @@ static NSString *ID = @"cell";
  */
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     [self addTimer];
+}
+
+/**
+ *  停止滚动
+ */
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    int page = (int)(self.collectionView.contentOffset.x / self.collectionView.bounds.size.width) % self.newesArr.count;
+    self.pageControl.currentPage = page;
 }
 
 @end
